@@ -7,9 +7,6 @@ const Style = styled.div`
   justify-content: center;
   align-items: center;
 
-  width: 100%;
-  height: 100vh;
-  gap: 1.5em;
   position: relative;
 
   z-index: 1;
@@ -26,25 +23,41 @@ const HeaderContainer = styled.div`
   display: flex;
   flex-direction: space-between;
   justify-content: space-between;
-  align-items: space-between;
+  align-items: center;
 
   width: 100%;
 `;
 
 const LogoHeader = () => {
-    alert("Logo Clicked");
+  alert("Logo Clicked");
 };
 
 const LoginHeader = () => {
-    alert("Login Clicked");
+  alert("Login Clicked");
 };
 
 const Main = () => {
   return (
     <Style>
       <HeaderContainer>
-        <Button className="logo" onClick={LogoHeader}>Logo</Button>
-        <Button className="login" onClick={LoginHeader}>Login</Button>
+        <Button
+          className="logo"
+          variant="contained"
+          color="inherit"
+          size="medium"
+          onClick={LogoHeader}
+        >
+          Logo
+        </Button>
+        <Button
+          className="login"
+          variant="contained"
+          color="inherit"
+          size="medium"
+          onClick={LoginHeader}
+        >
+          로그인/회원가입
+        </Button>
       </HeaderContainer>
     </Style>
   );
