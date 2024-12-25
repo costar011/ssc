@@ -62,15 +62,24 @@ const LoginButton = styled(Button)`
   font-size: 16px;
   font-weight: bold;
   color: #fff;
-  background-color: #f44336;
+  background-color: #d60202;
 
   border-radius: 20px;
   padding: 5px 15px;
   margin-left: 20px;
 
   &:hover {
-    background-color: #d32f2f;
+    background-color: #8f0303;
   }
+`;
+
+const MainContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
 `;
 
 const LogoHeader = () => {
@@ -84,14 +93,21 @@ const LoginHeader = () => {
 const Main = () => {
   return (
     <Style>
+      {/* 헤더 컨테이너 */}
       <HeaderContainer>
+        {/* 로그인 버튼 */}
         <LogoButton onClick={LogoHeader}>LOGO</LogoButton>
         <div>
+          {/* 메뉴 버튼들 */}
           <MenuButton>포트폴리오</MenuButton>
           <MenuButton>소개</MenuButton>
           <LoginButton onClick={LoginHeader}>로그인/회원가입</LoginButton>
         </div>
       </HeaderContainer>
+
+      <MainContainer>
+        <h1>메인 페이지</h1>
+      </MainContainer>
     </Style>
   );
 };
