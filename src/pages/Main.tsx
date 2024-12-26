@@ -82,8 +82,21 @@ const MainContainer = styled.div`
   height: 100%;
 `;
 
-const LogoHeader = () => {
-  alert("Logo Clicked");
+const SubMainContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+`;
+
+const portfolioHeader = () => {
+  alert("Portfolio Clicked");
+};
+
+const introduceHeader = () => {
+  alert("Introduce Clicked");
 };
 
 const LoginHeader = () => {
@@ -96,11 +109,11 @@ const Main = () => {
       {/* 헤더 컨테이너 */}
       <HeaderContainer>
         {/* 로그인 버튼 */}
-        <LogoButton onClick={LogoHeader}>LOGO</LogoButton>
+        <LogoButton>LOGO</LogoButton>
         <div>
           {/* 메뉴 버튼들 */}
-          <MenuButton>포트폴리오</MenuButton>
-          <MenuButton>소개</MenuButton>
+          <MenuButton onClick={portfolioHeader}>포트폴리오</MenuButton>
+          <MenuButton onClick={introduceHeader}>소개</MenuButton>
           <LoginButton onClick={LoginHeader}>로그인/회원가입</LoginButton>
         </div>
       </HeaderContainer>
@@ -108,6 +121,10 @@ const Main = () => {
       <MainContainer>
         <h1>메인 페이지</h1>
       </MainContainer>
+
+      <SubMainContainer>
+        <h1>서브 메인 페이지</h1>
+      </SubMainContainer>
     </Style>
   );
 };
