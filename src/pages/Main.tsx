@@ -113,6 +113,7 @@ const Main = () => {
         <div>
           {/* 메뉴 버튼들 */}
           <MenuButton onClick={portfolioHeader}>포트폴리오</MenuButton>
+          <MenuButton>게시판</MenuButton>
           <MenuButton onClick={introduceHeader}>소개</MenuButton>
           <LoginButton onClick={LoginHeader}>로그인/회원가입</LoginButton>
         </div>
