@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Style = styled.div`
   display: flex;
@@ -42,6 +43,7 @@ const MenuButton = styled(Button)`
   font-weight: normal;
   color: #000;
   background-color: transparent;
+
   box-shadow: none;
   padding: 0;
   min-width: auto;
@@ -113,18 +115,22 @@ const Main = () => {
         <div>
           {/* 메뉴 버튼들 */}
           <MenuButton onClick={portfolioHeader}>포트폴리오</MenuButton>
-          <MenuButton>게시판</MenuButton>
+          <MenuButton>
+            <Link to="/board" style={{ textDecoration: "none", color: "#000"}}>
+              게시판
+            </Link>
+          </MenuButton>
           <MenuButton onClick={introduceHeader}>소개</MenuButton>
           <LoginButton onClick={LoginHeader}>로그인/회원가입</LoginButton>
         </div>
       </HeaderContainer>
 
       <MainContainer>
-        <h1>메인 페이지</h1>
+        <h1>SSC Lab 웹 페이지 입니다.</h1>
       </MainContainer>
 
       <SubMainContainer>
-        <h1>서브 메인 페이지</h1>
+        <h3>다양한 소개 및 포트폴리오를 확인해보세요!</h3>
       </SubMainContainer>
     </Style>
   );
