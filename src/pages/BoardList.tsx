@@ -38,8 +38,6 @@ const Style = styled.div`
   position: relative;
 `;
 
-const WriteButton = styled(Button)`
-`;
 
 const chance = new Chance(42);
 // createData 함수는 주어진 id를 사용하여 랜덤 데이터를 생성
@@ -148,7 +146,7 @@ function rowContent(_index: number, row: Data) {
 export default function ReactVirtualizedTable() {
   return (
     <Style>
-      <Paper style={{ height: 500, width: "100%" }}>
+      <Paper style={{ height: 500, width: "100%", margin: "10px"}}>
         <TableVirtuoso
           data={rows}
           components={VirtuosoTableComponents}
@@ -156,7 +154,8 @@ export default function ReactVirtualizedTable() {
           itemContent={rowContent}
         />
       </Paper>
-      <WriteButton></WriteButton>
+      <Button variant="outlined">글쓰기</Button>
+      <Button variant="outlined">저장하기</Button>
     </Style>
   );
 }
