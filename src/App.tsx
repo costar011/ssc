@@ -12,10 +12,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/board" element={<BoardList/>} />
-        <Route path="/board" element={<Portfolio/>} />
-        <Route path="/board" element={<Introduce/>} />
-        <Route path="/board" element={<Login/>} />
-        <Route path="/board" element={<Register/>} />
+        <Route path="/portfolio" element={<Portfolio/>} />
+        <Route path="/introduce" element={<Introduce/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Register/>} />
 
       </Routes>
     </BrowserRouter>

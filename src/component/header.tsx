@@ -69,9 +69,7 @@ const Login = () => {
   const IntroduceClick = () => {
     alert("Introduce Clicked");
   };
-  const LoginClick = () => {
-    alert("Login Clicked");
-  };
+  const LoginClick = () => navigate("/login");
 
   return (
     <Style>
