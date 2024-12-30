@@ -10,7 +10,7 @@ const Style = styled.div`
   position: relative;
 
   .header-line {
-    width: 100%
+    width: 100%;
   }
 
   .main-container {
@@ -33,12 +33,10 @@ const Style = styled.div`
 `;
 
 const Main = () => {
-
-
   return (
     <Style>
       <div className="header-line">
-      <Header/>
+        <Header />
       </div>
       <div className="main-container">
         <h1>SSC Lab 웹 페이지 입니다.</h1>
