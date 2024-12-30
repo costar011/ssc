@@ -10,7 +10,7 @@ import { TableVirtuoso, TableComponents } from "react-virtuoso";
 import Chance from "chance";
 import styled from "@emotion/styled";
 import { Button } from "@mui/material";
-import Stack from '@mui/material/Stack';
+import Stack from "@mui/material/Stack";
 
 interface Data {
   id: number;
@@ -36,8 +36,15 @@ const Style = styled.div`
 
   width: 100%;
   position: relative;
-`;
 
+  .menu-buttons {
+    display: flex;
+    gap: 2em; /* 메뉴 버튼들 간격 설정 */
+    margin-left: auto; /* 메뉴 버튼을 오른쪽 정렬 */
+    margin-top: 1em;
+    margin-right: 2em;
+  }
+`;
 
 const chance = new Chance(42);
 // createData 함수는 주어진 id를 사용하여 랜덤 데이터를 생성
@@ -107,6 +114,14 @@ const VirtuosoTableComponents: TableComponents<Data> = {
   )),
 };
 
+const WriteClick = () => {
+  alert("Write Clicked");
+};
+
+const SaveClick = () => {
+  alert("Save Clicked");
+};
+
 // fixedHeaderContent 함수는 고정된 헤더 콘텐츠를 반환
 function fixedHeaderContent() {
   return (
@@ -146,7 +161,7 @@ function rowContent(_index: number, row: Data) {
 export default function ReactVirtualizedTable() {
   return (
     <Style>
-      <Paper style={{ height: 500, width: "100%", margin: "10px"}}>
+      <Paper style={{ height: 500, width: "100%", margin: "10px" }}>
         <TableVirtuoso
           data={rows}
           components={VirtuosoTableComponents}
@@ -154,8 +169,14 @@ export default function ReactVirtualizedTable() {
           itemContent={rowContent}
         />
       </Paper>
-      <Button variant="outlined">글쓰기</Button>
-      <Button variant="outlined">저장하기</Button>
+      <div className="menu-buttons">
+        <Button onClick={WriteClick} variant="outlined">
+          글쓰기
+        </Button>
+        <Button onClick={SaveClick} variant="outlined">
+          저장하기
+        </Button>
+      </div>
     </Style>
   );
 }

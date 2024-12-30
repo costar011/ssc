@@ -65,7 +65,7 @@ const Login = () => {
   const PortfolioClick = () => {
     alert("Portfolio Clicked");
   };
-  const BoardListClick = () => navigate("/board");
+  const BoardListClick = () => navigate("/boardlist");
   const IntroduceClick = () => {
     alert("Introduce Clicked");
   };
