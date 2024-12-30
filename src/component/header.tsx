@@ -45,7 +45,7 @@ const Style = styled.div`
   }
 
   .login-button {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     color: #fff;
     background-color: #d60202;

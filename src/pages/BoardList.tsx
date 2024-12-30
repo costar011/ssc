@@ -10,7 +10,7 @@ import { TableVirtuoso, TableComponents } from "react-virtuoso";
 import Chance from "chance";
 import styled from "@emotion/styled";
 import { Button } from "@mui/material";
-import Stack from "@mui/material/Stack";
+import { useNavigate } from "react-router-dom";
 
 interface Data {
   id: number;
@@ -67,12 +67,12 @@ const columns: ColumnData[] = [
     dataKey: "firstName", // 데이터 객체에서 해당 열의 값을 가져올 때 사용할 키
   },
   {
-    width: 100,
+    width: 50,
     label: "Last Name", // 열의 제목으로 "Last Name"을 사용
     dataKey: "lastName", // 데이터 객체에서 해당 열의 값을 가져올 때 사용할 키
   },
   {
-    width: 30,
+    width: 50,
     label: "Age", // 열의 제목으로 "Age"를 사용
     dataKey: "age", // 데이터 객체에서 해당 열의 값을 가져올 때 사용할 키
     numeric: true, // 숫자 형식으로 표시될 열인지 여부를 나타냄
@@ -90,7 +90,7 @@ const columns: ColumnData[] = [
 ];
 
 // rows 배열은 테이블의 행에 대한 데이터를 담고 있음
-const rows: Data[] = Array.from({ length: 200 }, (_, index) =>
+const rows: Data[] = Array.from({ length: 10 }, (_, index) =>
   createData(index)
 );
 
@@ -102,7 +102,7 @@ const VirtuosoTableComponents: TableComponents<Data> = {
   Table: (props) => (
     <Table
       {...props}
-      sx={{ borderCollapse: "separate", tableLayout: "fixed" }}
+      sx={{ borderCollapse: "separate", tableLayout: "auto", margin: "10px" }}
     />
   ),
   TableHead: React.forwardRef<HTMLTableSectionElement>((props, ref) => (
@@ -114,51 +114,50 @@ const VirtuosoTableComponents: TableComponents<Data> = {
   )),
 };
 
-const WriteClick = () => {
-  alert("Write Clicked");
-};
-
 const SaveClick = () => {
   alert("Save Clicked");
 };
 
-// fixedHeaderContent 함수는 고정된 헤더 콘텐츠를 반환
-function fixedHeaderContent() {
-  return (
-    <TableRow>
-      {columns.map((column) => (
-        <TableCell
-          key={column.dataKey}
-          variant="body"
-          align={column.numeric || false ? "right" : "left"}
-          style={{ width: column.width }}
-          sx={{ backgroundColor: "background.paper" }}
-        >
-          {column.label}
-        </TableCell>
-      ))}
-    </TableRow>
-  );
-}
+const BoardList = () => {
+  const navigate = useNavigate();
 
-// rowContent 함수는 주어진 인덱스와 데이터를 사용하여 행 콘텐츠를 반환
-function rowContent(_index: number, row: Data) {
-  return (
-    <React.Fragment>
-      {columns.map((column) => (
-        <TableCell
-          key={column.dataKey}
-          align={column.numeric || false ? "right" : "left"}
-        >
-          {row[column.dataKey]}
-        </TableCell>
-      ))}
-    </React.Fragment>
-  );
-}
+  const writeClick = () => navigate("/write");
 
-// ReactVirtualizedTable 컴포넌트는 react-virtuoso 라이브러리를 사용하여 가상화된 테이블을 렌더링
-export default function ReactVirtualizedTable() {
+  // fixedHeaderContent 함수는 고정된 헤더 콘텐츠를 반환
+  function fixedHeaderContent() {
+    return (
+      <TableRow>
+        {columns.map((column) => (
+          <TableCell
+            key={column.dataKey}
+            variant="body"
+            align={column.numeric || false ? "right" : "left"}
+            style={{ width: column.width }}
+            sx={{ backgroundColor: "background.paper" }}
+          >
+            {column.label}
+          </TableCell>
+        ))}
+      </TableRow>
+    );
+  }
+
+  // rowContent 함수는 주어진 인덱스와 데이터를 사용하여 행 콘텐츠를 반환
+  function rowContent(_index: number, row: Data) {
+    return (
+      <React.Fragment>
+        {columns.map((column) => (
+          <TableCell
+            key={column.dataKey}
+            align={column.numeric || false ? "right" : "left"}
+          >
+            {row[column.dataKey]}
+          </TableCell>
+        ))}
+      </React.Fragment>
+    );
+  }
+
   return (
     <Style>
       <Paper style={{ height: 500, width: "100%", margin: "10px" }}>
@@ -170,7 +169,7 @@ export default function ReactVirtualizedTable() {
         />
       </Paper>
       <div className="menu-buttons">
-        <Button onClick={WriteClick} variant="outlined">
+        <Button variant="outlined" onClick={writeClick}>
           글쓰기
         </Button>
         <Button onClick={SaveClick} variant="outlined">
@@ -179,4 +178,6 @@ export default function ReactVirtualizedTable() {
       </div>
     </Style>
   );
-}
+};
+
+export default BoardList;

@@ -5,6 +5,7 @@ import Portfolio from "./pages/Portfolio";
 import Introduce from "./pages/Introduce";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Write from "./pages/Write";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/boardlist" element={<BoardList/>} />
+        <Route path="/write" element={<Write/>} /> 
         <Route path="/portfolio" element={<Portfolio/>} />
         <Route path="/introduce" element={<Introduce/>} />
         <Route path="/login" element={<Login/>} />
