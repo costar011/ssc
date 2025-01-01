@@ -66,6 +66,9 @@ export default function Write() {
         <Button variant="contained" color="primary">
           글쓰기
         </Button>
+        <Button variant="contained" color="error">
+          취소
+        </Button>
       </div>
     </Style>
   );
