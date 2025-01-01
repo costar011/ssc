@@ -11,6 +11,7 @@ import Chance from "chance";
 import styled from "@emotion/styled";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Header from "../component/header";
 
 interface Data {
   id: number;
@@ -160,6 +161,7 @@ const BoardList = () => {
 
   return (
     <Style>
+      <Header />
       <Paper style={{ height: 500, width: "100%", margin: "10px" }}>
         <TableVirtuoso
           data={rows}
