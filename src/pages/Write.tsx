@@ -63,6 +63,7 @@ export default function Write() {
         <h1>글쓰기</h1>
         <input type="text" placeholder="제목을 입력하세요" />
         <textarea placeholder="내용을 입력하세요" />
+        <div></div>
         <Button variant="contained" color="primary">
           글쓰기
         </Button>
