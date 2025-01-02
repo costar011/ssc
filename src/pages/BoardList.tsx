@@ -11,6 +11,7 @@ import { TableVirtuoso, TableComponents } from "react-virtuoso";
 import Chance from "chance";
 import styled from "@emotion/styled";
 import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 interface Data {
   id: number;
@@ -125,43 +126,46 @@ const VirtuosoTableComponents: TableComponents<Data> = {
   )),
 };
 
-// fixedHeaderContent 함수는 고정된 헤더 콘텐츠를 반환
-function fixedHeaderContent() {
-  return (
-    <TableRow>
-      {columns.map((column) => (
-        <TableCell
-          key={column.dataKey}
-          variant="body"
-          align={column.numeric || false ? "right" : "left"}
-          style={{ width: column.width }}
-          sx={{ backgroundColor: "background.paper" }}
-        >
-          {column.label}
-        </TableCell>
-      ))}
-    </TableRow>
-  );
-}
+const BoardList = () => {
+  const navigate = useNavigate();
 
-// rowContent 함수는 주어진 인덱스와 데이터를 사용하여 행 콘텐츠를 반환
-function rowContent(_index: number, row: Data) {
-  return (
-    <React.Fragment>
-      {columns.map((column) => (
-        <TableCell
-          key={column.dataKey}
-          align={column.numeric || false ? "right" : "left"}
-        >
-          {row[column.dataKey]}
-        </TableCell>
-      ))}
-    </React.Fragment>
-  );
-}
+  const WriteButton = () => navigate("/write");
 
-// ReactVirtualizedTable 컴포넌트는 react-virtuoso 라이브러리를 사용하여 가상화된 테이블을 렌더링
-export default function ReactVirtualizedTable() {
+  // fixedHeaderContent 함수는 고정된 헤더 콘텐츠를 반환
+  function fixedHeaderContent() {
+    return (
+      <TableRow>
+        {columns.map((column) => (
+          <TableCell
+            key={column.dataKey}
+            variant="body"
+            align={column.numeric || false ? "right" : "left"}
+            style={{ width: column.width }}
+            sx={{ backgroundColor: "background.paper" }}
+          >
+            {column.label}
+          </TableCell>
+        ))}
+      </TableRow>
+    );
+  }
+
+  // rowContent 함수는 주어진 인덱스와 데이터를 사용하여 행 콘텐츠를 반환
+  function rowContent(_index: number, row: Data) {
+    return (
+      <React.Fragment>
+        {columns.map((column) => (
+          <TableCell
+            key={column.dataKey}
+            align={column.numeric || false ? "right" : "left"}
+          >
+            {row[column.dataKey]}
+          </TableCell>
+        ))}
+      </React.Fragment>
+    );
+  }
+
   return (
     <Style>
       <div className="header-line">
@@ -184,11 +188,15 @@ export default function ReactVirtualizedTable() {
             itemContent={rowContent}
           />
           <div className="button_wapper">
-            <Button variant="outlined">글쓰기</Button>
+            <Button variant="outlined" onClick={WriteButton}>
+              글쓰기
+            </Button>
             <Button variant="outlined">저장하기</Button>
           </div>
         </Paper>
       </div>
     </Style>
   );
-}
+};
+
+export default BoardList;

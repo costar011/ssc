@@ -20,7 +20,6 @@ const Style = styled.div`
   }
 
   .logo-button {
-    width: 200px;
     font-size: 20px;
     font-weight: bold;
     color: ${color.default_font};
@@ -46,7 +45,6 @@ const Style = styled.div`
   }
 
   .login-button {
-    width: 250px;
     font-size: 15px;
     font-weight: bold;
     color: #fff;

@@ -1,18 +1,18 @@
 import styled from "@emotion/styled";
 import Header from "../component/header";
 import { Button } from "@mui/material";
+import { color } from "../utils";
 
 const Style = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   position: relative;
 
-  .menu-buttons {
-    display: flex;
-    gap: 5em; /* 메뉴 버튼들 간격 설정 */
-    margin-left: auto; /* 메뉴 버튼을 오른쪽 정렬 */
+  .header-line {
+    width: 100%;
   }
 
   .write-container {
@@ -47,10 +47,6 @@ const Style = styled.div`
     font-size: 1em;
   }
 
-  button:hover {
-    background-color: #f0f0f0;
-  }
-
   .btn-container {
     display: flex;
     gap: 1em;
@@ -60,7 +56,7 @@ const Style = styled.div`
 export default function Write() {
   return (
     <Style>
-      <div className="menu-buttons">
+      <div className="header-line">
         <Header />
       </div>
       <div className="write-container">
