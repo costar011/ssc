@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import Header from "../component/header";
 import { Button } from "@mui/material";
-import { color } from "../utils";
 
 const Style = styled.div`
   display: flex;
