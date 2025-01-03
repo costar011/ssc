@@ -52,6 +52,14 @@ const Style = styled.div`
   }
 `;
 
+const WriteButton = () => {
+  alert("글쓰기 버튼 클릭");
+};
+
+const CancelButton = () => {
+  alert("취소 버튼 클릭");
+};
+
 export default function Write() {
   return (
     <Style>
@@ -63,14 +71,14 @@ export default function Write() {
         <input type="text" placeholder="제목을 입력하세요" />
         <textarea placeholder="내용을 입력하세요" />
         <div className="btn-container">
-          <Button variant="contained" color="primary">
+          <Button variant="contained" color="primary" onClick={WriteButton}>
             글쓰기
           </Button>
-          <Button variant="contained" color="error">
+          <Button variant="contained" color="error" onClick={CancelButton}>
             취소
           </Button>
         </div>
       </div>
     </Style>
   );
-}
+};
