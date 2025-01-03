@@ -46,7 +46,11 @@ const Style = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
+    padding: 0px 25px;
     position: relative; /* 부모 컨테이너를 기준으로 버튼 위치 설정 */
+  }
+
+  .title {
   }
 
   .button_wapper {
@@ -171,6 +175,9 @@ const BoardList = () => {
       <div className="header-line">
         <Header />
       </div>
+      <div className="title">
+        <h2>안녕</h2>
+      </div>
       <div className="main-container">
         <Paper
           style={{
@@ -191,7 +198,6 @@ const BoardList = () => {
             <Button variant="outlined" onClick={WriteButton}>
               글쓰기
             </Button>
-            <Button variant="outlined">저장하기</Button>
           </div>
         </Paper>
       </div>
