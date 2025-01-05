@@ -129,7 +129,11 @@ const VirtuosoTableComponents: TableComponents<Data> = {
 const BoardList = () => {
   const navigate = useNavigate();
 
-  const WriteButton = () => navigate("/write");
+  const writeButton = () => navigate("/write");
+
+  const saveButton = () => {
+    alert("저장하기 버튼 클릭");
+  };
 
   // fixedHeaderContent 함수는 고정된 헤더 콘텐츠를 반환
   function fixedHeaderContent() {
@@ -188,10 +192,12 @@ const BoardList = () => {
             itemContent={rowContent}
           />
           <div className="button_wapper">
-            <Button variant="outlined" onClick={WriteButton}>
+            <Button variant="outlined" onClick={writeButton}>
               글쓰기
             </Button>
-            <Button variant="outlined">저장하기</Button>
+            <Button variant="outlined" onClick={saveButton}>
+              저장하기
+            </Button>
           </div>
         </Paper>
       </div>

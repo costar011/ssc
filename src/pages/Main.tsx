@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import Header from "../component/header";
+import Theme from "../styles/Theme";
 
 const Style = styled.div`
   display: flex;
@@ -8,6 +9,7 @@ const Style = styled.div`
   align-items: center;
   height: 100vh;
   position: relative;
+  background-color: ${Theme.mainThemeColor};
 
   .header-line {
     width: 100%;
@@ -27,6 +29,7 @@ const Style = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
+    background-color: ${Theme.subThemeColor};
   }
 `;
 

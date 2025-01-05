@@ -10,10 +10,6 @@ const Style = styled.div`
   height: 100vh;
   position: relative;
 
-  .header-line {
-    width: 100%;
-  }
-
   .write-container {
     display: flex;
     flex-direction: column;
@@ -49,6 +45,9 @@ const Style = styled.div`
   .btn-container {
     display: flex;
     gap: 1em;
+
+    width: 200px;
+    border-radius: 15px;
   }
 `;
 
@@ -63,9 +62,7 @@ const CancelButton = () => {
 export default function Write() {
   return (
     <Style>
-      <div className="header-line">
-        <Header />
-      </div>
+      <Header />
       <div className="write-container">
         <h1>글쓰기</h1>
         <input type="text" placeholder="제목을 입력하세요" />
@@ -81,4 +78,4 @@ export default function Write() {
       </div>
     </Style>
   );
-};
+}
