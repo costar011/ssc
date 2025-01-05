@@ -62,6 +62,7 @@ const Style = styled.div`
 const Login = () => {
   const navigate = useNavigate();
 
+  const LogoClick = () => navigate("/");
   const PortfolioClick = () => {
     alert("Portfolio Clicked");
   };
@@ -74,7 +75,7 @@ const Login = () => {
   return (
     <Style>
       <div className="header-container">
-        <Button className="logo-button">LOGO</Button>
+        <Button className="logo-button" onClick={LogoClick}>LOGO</Button>
         <div className="menu-buttons">
           <Button className="menu-button" onClick={PortfolioClick}>
             포트폴리오

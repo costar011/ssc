@@ -44,7 +44,7 @@ const Style = styled.div`
   .main-container {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 80%;
     height: 100%;
     position: relative; /* 부모 컨테이너를 기준으로 버튼 위치 설정 */
   }

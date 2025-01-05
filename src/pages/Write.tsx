@@ -10,12 +10,17 @@ const Style = styled.div`
   height: 100vh;
   position: relative;
 
-  .write-container {
+  .header-line {
+    width: 100%;
+  }
+
+  .main-container {
     display: flex;
+    margin-top: 30px;
     flex-direction: column;
-    gap: 1em;
+    gap: 0.7em;
     width: 80%;
-    margin-top: 2em;
+    height: 100%;
   }
 
   h1 {
@@ -24,49 +29,48 @@ const Style = styled.div`
 
   input {
     width: 100%;
-    height: 2em;
-    padding: 0.5em;
-    font-size: 1em;
-  }
-
-  textarea {
-    width: 100%;
-    height: 20em;
-    padding: 0.5em;
-    font-size: 1em;
-  }
-
-  button {
-    width: 100%;
     height: 3em;
+    padding: 0.5em;
     font-size: 1em;
+  }
+  .textarea {
+    width: 100%;
+    height: 300px;
+    padding: 0.5em;
+    font-size: 1em;
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    vertical-align: top; /* 텍스트 상단 정렬 */
+    resize: none; /* 필요 시 크기 조절 비활성화 */
   }
 
   .btn-container {
+    width: 100%;
     display: flex;
     gap: 1em;
-
     width: 200px;
     border-radius: 15px;
   }
 `;
+const Write = () => {
+  const WriteButton = () => {
+    alert("글쓰기 버튼 클릭");
+  };
 
-const WriteButton = () => {
-  alert("글쓰기 버튼 클릭");
-};
+  const CancelButton = () => {
+    alert("취소 버튼 클릭");
+  };
 
-const CancelButton = () => {
-  alert("취소 버튼 클릭");
-};
-
-export default function Write() {
   return (
     <Style>
-      <Header />
-      <div className="write-container">
+      <div className="header-line">
+        <Header />
+      </div>
+
+      <div className="main-container">
         <h1>글쓰기</h1>
         <input type="text" placeholder="제목을 입력하세요" />
-        <textarea placeholder="내용을 입력하세요" />
+        <textarea className="textarea" placeholder="내용을 입력하세요" />
+
         <div className="btn-container">
           <Button variant="contained" color="primary" onClick={WriteButton}>
             글쓰기
@@ -78,4 +82,6 @@ export default function Write() {
       </div>
     </Style>
   );
-}
+};
+
+export default Write;
