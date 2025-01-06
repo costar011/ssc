@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import { color } from "../utils";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
+import Theme from "../styles/Theme";
 
 const Style = styled.div`
   display: flex;
@@ -16,28 +16,29 @@ const Style = styled.div`
     align-items: center;
     width: 100%;
     padding: 15px 25px;
-    background-color: ${color.background};
+    background-color: ${Theme.mainThemeColor};
   }
 
   .logo-button {
     font-size: 20px;
     font-weight: bold;
-    color: ${color.default_font};
+    color: ${Theme.defaultColor};
     box-shadow: none;
     margin-right: auto; /* 로고를 왼쪽 정렬 */
   }
 
   .menu-buttons {
     display: flex;
-    gap: 2em; /* 메뉴 버튼들 간격 설정 */
+    gap: 2.5em; /* 메뉴 버튼들 간격 설정 */
     margin-left: auto; /* 메뉴 버튼을 오른쪽 정렬 */
   }
 
   .menu-button {
     font-size: 18px;
-    color: ${color.default_font};
+    color: ${Theme.defaultColor};
+    font-weight: bold;
     min-width: auto;
-    padding: 0;
+    padding: 0px;
   }
 
   .menu-button:hover {
@@ -45,17 +46,17 @@ const Style = styled.div`
   }
 
   .login-button {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: bold;
-    color: #fff;
-    background-color: #d60202;
+    color: ${Theme.whiteColor};
+    background-color: ${Theme.subThemeColor};
     border-radius: 20px;
     padding: 5px 15px;
     margin-left: 0.3em;
   }
 
   .login-button:hover {
-    background-color: #8f0303;
+    background-color: #692330;
   }
 `;
 
