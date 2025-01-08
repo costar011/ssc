@@ -36,18 +36,16 @@ const Style = styled.div`
     font-size: 1em;
   }
 
-  button {
-    width: 100%;
-    height: 3em;
-    font-size: 1em;
+  .button-wapper {
+    display: flex;
+    justify-content: flex-end;
+    margintop: 10px;
+    gap: 0.7em;
+    margin: 10px 5px;
   }
 
-  .btn-container {
-    display: flex;
-    gap: 1em;
-
-    width: 200px;
-    border-radius: 15px;
+  .header-line {
+    width: 100%;
   }
 `;
 
@@ -62,12 +60,15 @@ const CancelButton = () => {
 export default function Write() {
   return (
     <Style>
-      <Header />
+      <div className="header-line">
+        <Header />
+      </div>
+
       <div className="write-container">
         <h1>글쓰기</h1>
         <input type="text" placeholder="제목을 입력하세요" />
         <textarea placeholder="내용을 입력하세요" />
-        <div className="btn-container">
+        <div className="button-wapper">
           <Button variant="contained" color="primary" onClick={WriteButton}>
             글쓰기
           </Button>
