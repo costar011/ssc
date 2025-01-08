@@ -64,12 +64,12 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 function createData(
   name: string,
-  calories: number,
-  fat: number,
+  Departmentnumber: number,
+  grade: number,
   carbs: number,
   protein: number
 ) {
-  return { name, calories, fat, carbs, protein };
+  return { name, Departmentnumber, grade, carbs, protein };
 }
 
 const rows = [
@@ -98,11 +98,11 @@ const BoardList = () => {
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-              <StyledTableCell align="right">Calories</StyledTableCell>
-              <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-              <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-              <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
+              <StyledTableCell>학생 이름</StyledTableCell>
+              <StyledTableCell align="right">학번</StyledTableCell>
+              <StyledTableCell align="right">학년</StyledTableCell>
+              <StyledTableCell align="right"></StyledTableCell>
+              <StyledTableCell align="right"></StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -111,10 +111,10 @@ const BoardList = () => {
                 <StyledTableCell component="th" scope="row">
                   {row.name}
                 </StyledTableCell>
-                <StyledTableCell align="right">{row.calories}</StyledTableCell>
-                <StyledTableCell align="right">{row.fat}</StyledTableCell>
-                <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-                <StyledTableCell align="right">{row.protein}</StyledTableCell>
+                <StyledTableCell align="right">{row.Departmentnumber}</StyledTableCell>
+                <StyledTableCell align="right">{row.grade}</StyledTableCell>
+                <StyledTableCell align="right">{}</StyledTableCell>
+                <StyledTableCell align="right">{}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>
