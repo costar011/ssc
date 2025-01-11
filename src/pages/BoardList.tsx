@@ -1,4 +1,3 @@
-import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -66,18 +65,18 @@ function createData(
   name: string,
   Departmentnumber: number,
   grade: number,
-  carbs: number,
+  phonenumber: string,
   protein: number
 ) {
-  return { name, Departmentnumber, grade, carbs, protein };
+  return { name, Departmentnumber, grade, phonenumber, protein };
 }
 
 const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
+  createData("말똥이", 20, 2, "010-1234-1234", 4.0),
+  createData("라이언", 21, 3, "010-2222-2222", 4.3),
+  createData("어피치", 19, 5, "010-1212-3434", 6.0),
+  createData("뽀로로", 20, 2, "010-6666-3333", 4.3),
+  createData("크롱롱", 23, 1, "010-9999-2368", 3.9),
 ];
 
 const BoardList = () => {
@@ -95,13 +94,13 @@ const BoardList = () => {
       </div>
 
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 700 }} aria-label="customized table">
+        <Table sx={{ minWidth: 600, marginTop: 10 }} aria-label="customized table">
           <TableHead>
             <TableRow>
               <StyledTableCell>학생 이름</StyledTableCell>
               <StyledTableCell align="right">학번</StyledTableCell>
               <StyledTableCell align="right">학년</StyledTableCell>
-              <StyledTableCell align="right"></StyledTableCell>
+              <StyledTableCell align="right">전화번호</StyledTableCell>
               <StyledTableCell align="right"></StyledTableCell>
             </TableRow>
           </TableHead>
@@ -113,7 +112,7 @@ const BoardList = () => {
                 </StyledTableCell>
                 <StyledTableCell align="right">{row.Departmentnumber}</StyledTableCell>
                 <StyledTableCell align="right">{row.grade}</StyledTableCell>
-                <StyledTableCell align="right">{}</StyledTableCell>
+                <StyledTableCell align="right">{row.phonenumber}</StyledTableCell>
                 <StyledTableCell align="right">{}</StyledTableCell>
               </StyledTableRow>
             ))}
