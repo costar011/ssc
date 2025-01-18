@@ -94,7 +94,7 @@ const BoardList = () => {
       </div>
 
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 600, marginTop: 10 }} aria-label="customized table">
+        <Table sx={{ minWidth: 500, marginTop: 5 }} aria-label="customized table">
           <TableHead>
             <TableRow>
               <StyledTableCell>학생 이름</StyledTableCell>
@@ -121,6 +121,7 @@ const BoardList = () => {
       </TableContainer>
 
       <div className="button-wapper">
+      <Button variant="contained">헉생 추가하기</Button>
         <Button variant="outlined" onClick={writeButton}>
           글쓰기
         </Button>
