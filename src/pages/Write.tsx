@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import Header from "../component/header";
 import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Style = styled.div`
   display: flex;
@@ -49,15 +50,18 @@ const Style = styled.div`
   }
 `;
 
-const WriteButton = () => {
-  alert("글쓰기 버튼 클릭");
-};
+const Write = () => {
+  const navigate = useNavigate();
 
-const CancelButton = () => {
-  alert("취소 버튼 클릭");
-};
+  const WriteButton = () => {
+    alert("글쓰기가 완료되었습니다.");
+    navigate("/boardlist");
+  };
 
-export default function Write() {
+  const CancelButton = () => {
+    alert("글쓰기가 취소되었습니다.");
+  };
+
   return (
     <Style>
       <div className="header-line">
@@ -79,4 +83,6 @@ export default function Write() {
       </div>
     </Style>
   );
-}
+};
+
+export default Write;
