@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import Header from "../component/header";
-import Theme from "../styles/Theme";
+import { Button } from "@mui/material";
 
 const Style = styled.div`
   display: flex;
@@ -9,7 +9,6 @@ const Style = styled.div`
   align-items: center;
   height: 100vh;
   position: relative;
-  background-color: ${Theme.mainThemeColor};
 
   .header-line {
     width: 100%;
@@ -17,6 +16,7 @@ const Style = styled.div`
 
   .main-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -25,13 +25,15 @@ const Style = styled.div`
 
   .sub-main-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: ${Theme.subThemeColor};
   }
 `;
+
+const url = "https://www.instagram.com/dev.yerim/";
 
 const Main = () => {
   return (
@@ -40,11 +42,15 @@ const Main = () => {
         <Header />
       </div>
       <div className="main-container">
-        <h1>SSC Lab 웹 페이지 입니다.</h1>
+        <h1>SSCLab에 오신것을 환영합니다.</h1>
+        <h1>동아리 웹 페이지 입니다.</h1>
       </div>
 
       <div className="sub-main-container">
-        <h3>다양한 소개 및 포트폴리오를 확인해보세요!</h3>
+        <h3>대학교 컴퓨터학과 동아리 포트폴리오 입니다.</h3>
+        <h3>SSC란 Societal Safety Communication Lab 뜻합니다.</h3>
+        <h3>궁금한점이 있으시면 연락주세요.</h3>
+        <Button variant="outlined" onClick={() => {window.open(url)}}>instagram</Button>
       </div>
     </Style>
   );
