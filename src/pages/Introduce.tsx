@@ -1,11 +1,10 @@
-import styled from "@emotion/styled";
 import { color } from "../utils";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
+import Header from "../component/header";
+import styled from "@emotion/styled";
 
-import style from "@emotion/styled";
-
-const Style = style.div`
+const Style = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,8 +18,13 @@ const Style = style.div`
 `;
 
 const Introduce = () => {
-    return(
-        <></>
-    );
-}
+  const navigate = useNavigate();
+  return (
+    <Style>
+      <div className="header-line">
+        <Header />
+      </div>
+    </Style>
+  );
+};
 export default Introduce;
