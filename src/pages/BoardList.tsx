@@ -12,7 +12,7 @@ import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import style from "@emotion/styled";
 
-const Style = style.div`
+const Style = style.div` /* Style 컴포넌트 */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,9 +35,9 @@ const Style = style.div`
   .button-wapper {
     display: flex;
     justify-content: flex-end;
-    margintop: 10px;
+    margintop: 10em;
     gap: 0.7em;
-    margin: 10px 5px;
+    margin: 10em 5em;
   }
 `;
 

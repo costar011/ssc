@@ -3,7 +3,7 @@ import Header from "../component/header";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-const Style = styled.div`
+const Style = styled.div` /* Style 컴포넌트 */
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 import Header from "../component/header";
 import styled from "@emotion/styled";
 
-const Style = styled.div`
+const Style = styled.div` /* Style 컴포넌트 */
   display: flex;
   flex-direction: column;
   justify-content: center;
