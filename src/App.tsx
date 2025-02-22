@@ -6,6 +6,7 @@ import Introduce from "./pages/Introduce";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Write from "./pages/Write";
+import Signup from "./pages/signup";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/introduce" element={<Introduce />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/register" element={<Register />} />
 
       </Routes>

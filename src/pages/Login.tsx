@@ -4,6 +4,7 @@ import { Button, OutlinedInput, IconButton } from "@mui/material";
 import { useState } from "react";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { useNavigate } from "react-router-dom";
 
 const Style = styled.div` /* Style 컴포넌트 */
   display: flex;
@@ -66,6 +67,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+  const signupBtn = () => navigate("/signup");
 
   const handleTogglePassword = () => {
     setShowPassword((prev) => !prev);
@@ -112,7 +115,7 @@ const Login = () => {
             <Button
               variant="outlined"
               color="primary"
-              onClick={() => console.log("Signup clicked")}
+              onClick={signupBtn}
             >
               Sign Up
             </Button>
