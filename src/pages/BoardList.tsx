@@ -1,16 +1,8 @@
-import { styled } from "@mui/material/styles";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell, { tableCellClasses } from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-
 import Header from "../component/header";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import style from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 
 const Style = style.div` /* Style 컴포넌트 */
   display: flex;
@@ -41,42 +33,6 @@ const Style = style.div` /* Style 컴포넌트 */
   }
 `;
 
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
-  },
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
-  },
-}));
-
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  "&:nth-of-type(odd)": {
-    backgroundColor: theme.palette.action.hover,
-  },
-  // hide last border
-  "&:last-child td, &:last-child th": {
-    border: 0,
-  },
-}));
-
-function createData(
-  name: string,
-  Departmentnumber: number,
-  grade: number,
-  phonenumber: string
-) {
-  return { name, Departmentnumber, grade, phonenumber};
-}
-
-const rows = [
-  createData("말똥이", 20, 2, "010-1234-1234"),
-  createData("라이언", 21, 3, "010-2222-2222"),
-  createData("어피치", 19, 5, "010-1212-3434"),
-  createData("뽀로로", 20, 2, "010-6666-3333"),
-  createData("크롱롱", 23, 1, "010-9999-2368"),
-];
 
 const BoardList = () => {
   const navigate = useNavigate();
@@ -91,31 +47,6 @@ const BoardList = () => {
       <div className="header-line">
         <Header />
       </div>
-
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 400, marginTop: 1 }} aria-label="customized table">
-          <TableHead>
-            <TableRow>
-              <StyledTableCell>학생 이름</StyledTableCell>
-              <StyledTableCell align="right">학번</StyledTableCell>
-              <StyledTableCell align="right">학년</StyledTableCell>
-              <StyledTableCell align="right">전화번호</StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <StyledTableRow key={row.name}>
-                <StyledTableCell component="th" scope="row">
-                  {row.name}
-                </StyledTableCell>
-                <StyledTableCell align="right">{row.Departmentnumber}</StyledTableCell>
-                <StyledTableCell align="right">{row.grade}</StyledTableCell>
-                <StyledTableCell align="right">{row.phonenumber}</StyledTableCell>
-              </StyledTableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
 
       <div className="button-wapper">
       <Button variant="contained">학생 추가하기</Button>
