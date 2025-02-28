@@ -2,6 +2,7 @@ import { color } from "../utils";
 import { Button } from "@mui/material";
 import Header from "../component/header";
 import styled from "@emotion/styled";
+import { useNavigate } from "react-router-dom";
 
 const Style = styled.div` /* Style 컴포넌트 */
   display: flex;
@@ -17,11 +18,15 @@ const Style = styled.div` /* Style 컴포넌트 */
 `;
 
 const Signup = () => {
+  const navigate = useNavigate();
+  const Btn = () => navigate("/");
   return (
     <Style>
       <div className="header-line">
         <Header />
-      </div>      
+      </div>
+
+      <Button onClick={Btn}>login</Button>      
     </Style>
   );
 };
