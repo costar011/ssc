@@ -133,3 +133,36 @@ const BoardList = () => {
 
 export default BoardList;
 */
+
+/* 보드 리스트 페이지
+const BoardList = () => {
+  const navigate = useNavigate();
+
+  const writeBtn = () => navigate("/write");
+
+  const saveBtn = () => {
+    alert("저장하기 버튼 클릭");
+  };
+
+    return (
+      <Style>
+        <div className="header-line">
+          <Header />
+        </div>
+        
+
+        <div className="button-wapper">
+          <Button variant="contained">학생 추가하기</Button>
+          <Button variant="outlined" onClick={writeBtn}>
+            글쓰기
+          </Button>
+          <Button variant="outlined" onClick={saveBtn}>
+            저장하기
+          </Button>
+        </div>
+      </Style>
+    );
+  };
+
+export default BoardList;
+*/
