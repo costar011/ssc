@@ -60,6 +60,7 @@ const Write = () => {
 
   const CancelButton = () => {
     alert("글쓰기가 취소되었습니다.");
+    navigate("/boardlist");
   };
 
   return (
