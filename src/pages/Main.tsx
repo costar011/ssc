@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import Header from "../component/header";
+import Stack from '@mui/material/Stack';
 
 const Style = styled.div` /* Style 컴포넌트 */
   display: flex;
@@ -41,9 +42,9 @@ const Style = styled.div` /* Style 컴포넌트 */
 const Main = () => {
   return (
     <Style>
-      <div className="header-line">
+      <Stack className="header-line">
         <Header />
-      </div>
+      </Stack>
       <div className="main-container">
         <span>SSCLab에 오신것을 환영합니다.</span>
         <span>동아리 웹 페이지 입니다.</span>
