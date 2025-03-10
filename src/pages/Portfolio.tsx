@@ -7,7 +7,6 @@ import styled from "@emotion/styled";
 import Stack from "@mui/material/Stack";
 
 const Portfolio = () => {
-  const navigate = useNavigate();
   return (
     <Stack
       direction="column"

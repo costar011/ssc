@@ -6,27 +6,18 @@ import styled from "@emotion/styled";
 
 import Stack from '@mui/material/Stack';
 
-const Style = styled.div` /* Style 컴포넌트 */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  position: relative;
-
-  .header-line {
-    width: 100%;
-  }
-`;
-
 const Introduce = () => {
-  const navigate = useNavigate();
   return (
-    <Style>
-      <div className="header-line">
-        <Header />
-      </div>
-    </Style>
+    <Stack
+      direction="column"
+      height="100vh"
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      position="relative"
+    >
+      <Header />
+    </Stack>
   );
 };
 export default Introduce;
