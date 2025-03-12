@@ -1,8 +1,4 @@
-import { color } from "../utils";
-import { useNavigate } from "react-router-dom";
-import { Button } from "@mui/material";
 import Header from "../component/header";
-import styled from "@emotion/styled";
 
 import Stack from "@mui/material/Stack";
 

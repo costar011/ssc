@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { color } from "../utils";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 
@@ -16,13 +15,11 @@ const Style = styled.div`
     align-items: center;
     width: 100%;
     padding: 15px 25px;
-    background-color: ${color.background};
   }
 
   .logo-button {
     font-size: 20px;
     font-weight: bold;
-    color: ${color.default_font};
     box-shadow: none;
     margin-right: auto; /* 로고를 왼쪽 정렬 */
   }
@@ -35,7 +32,6 @@ const Style = styled.div`
 
   .menu-button {
     font-size: 18px;
-    color: ${color.default_font};
     min-width: auto;
     padding: 0;
   }
