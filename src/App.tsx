@@ -6,7 +6,7 @@ import Introduce from "./pages/Introduce";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Write from "./pages/Write";
-import Signup from "./pages/signup";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
